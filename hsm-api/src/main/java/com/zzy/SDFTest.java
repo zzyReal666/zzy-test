@@ -21,9 +21,9 @@ public class SDFTest {
 		ECCrefPublicKey publicKey = new ECCrefPublicKey();
 		ECCrefPrivateKey privateKey = new ECCrefPrivateKey();
 
-		// ZaykSDF sdf = ZaykSDF.getInstance();//读配置文件
+		 ZaykSDF sdf = ZaykSDF.getInstance("/etc/zayk4j.ini");//读配置文件
 
-		ZaykSDF sdf = ZaykSDF.getInstance("192.168.7.112", "13556", 1); // ip，端口，连接池大小
+//		ZaykSDF sdf = ZaykSDF.getInstance("192.168.7.112", "13556", 1); // ip，端口，连接池大小
 
 		// 随机数测试
 		System.out.println();

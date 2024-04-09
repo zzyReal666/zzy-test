@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<configuration>
+
+    <!--    禁止logback打印自己的日志-->
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+    <!--    控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    远程日志服务器-->
+    <appender name="socket" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>192.168.7.158</syslogHost>
+        <port>1514</port>
+        <facility>LOCAL0</facility>
+        <suffixPattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</suffixPattern>
+    </appender>
+
+
+    <logger name="org.apache.shardingsphere" level="info" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="com" level="info" additivity="true">
+        <appender-ref ref="socket"/>
+    </logger>
+
+    <logger name="com.zaxxer.hikari" level="error"/>
+    <logger name="com.atomikos" level="error"/>
+    <logger name="io.netty" level="error"/>
+
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="socket"/>
+    </root>
+</configuration>
