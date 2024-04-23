@@ -25,5 +25,7 @@
         <module>sinocipher-dbenc-all</module>
         <module>logs-network</module>
         <module>oracle-jdbc</module>
+        <module>jdbc-transaction</module>
+        <module>oldData-encrypt</module>
     </modules>
 </project>
