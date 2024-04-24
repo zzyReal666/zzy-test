@@ -27,5 +27,6 @@
         <module>oracle-jdbc</module>
         <module>jdbc-transaction</module>
         <module>oldData-encrypt</module>
+        <module>Antlr-Plugin</module>
     </modules>
 </project>
