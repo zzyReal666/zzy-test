@@ -40,8 +40,6 @@ public class Main {
                 }
 
                 int[] updateCounts = preparedStatement.executeBatch(); // 执行批处理
-
-
                 // 添加数据到 transaction_status 表
                 String insertStatusQuery = "INSERT INTO transaction_status (tableName, block_index, transaction_status) VALUES (?, ?, ?)";
                 PreparedStatement statusStatement = connection.prepareStatement(insertStatusQuery);
