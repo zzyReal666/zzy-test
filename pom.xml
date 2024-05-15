@@ -28,5 +28,8 @@
         <module>jdbc-transaction</module>
         <module>oldData-encrypt</module>
         <module>Antlr-Plugin</module>
+        <module>thread-springBoot</module>
+        <module>clickhouse</module>
+        <module>design-pattern</module>
     </modules>
 </project>
